@@ -32,34 +32,34 @@ TEST(FooTest, HandleNoneZeroInput)
     EXPECT_EQ(3, 1+2) <<  "ok?";
 }
 
-//template <typename T> class FooType {
-//public:
-//    void Bar() { testing::StaticAssertTypeEq<int, T>(); }
-//};
-//class FooCalcTest:public testing::Test
-//{
-//protected:
-//    virtual void SetUp()
-//    {
-//        m_foo.Init();
-//    }
-//    virtual void TearDown()
-//    {
-//        m_foo.Finalize();
-//    }
-//
-//    FooCalc m_foo;
-//};
-//
-//TEST_F(FooCalcTest, HandleNoneZeroInput)
-//{
-//    EXPECT_EQ(4, m_foo.Calc(12, 16));
-//}
-//
-//TEST_F(FooCalcTest, HandleNoneZeroInput_Error)
-//{
-//    EXPECT_EQ(5, m_foo.Calc(12, 16));
-//}
+template <typename T> class FooType {
+public:
+    void Bar() { testing::StaticAssertTypeEq<int, T>(); }
+};
+class FooCalcTest:public testing::Test
+{
+protected:
+    virtual void SetUp()
+    {
+        m_foo.Init();
+    }
+    virtual void TearDown()
+    {
+        m_foo.Finalize();
+    }
+
+    FooCalc m_foo;
+};
+
+TEST_F(FooCalcTest, HandleNoneZeroInput)
+{
+    EXPECT_EQ(4, m_foo.Calc(12, 16));
+}
+
+TEST_F(FooCalcTest, HandleNoneZeroInput_Error)
+{
+    EXPECT_EQ(5, m_foo.Calc(12, 16));
+}
 
 
 int main(int argc, char** argv)
