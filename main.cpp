@@ -50,6 +50,8 @@ protected:
 
 //    FooCalc m_foo;
 // 能不能行！！
+///
+//
 };
 
 TEST_F(FooCalcTest, HandleNoneZeroInput)
