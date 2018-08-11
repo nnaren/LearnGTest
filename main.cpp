@@ -48,7 +48,7 @@ protected:
         m_foo.Finalize();
     }
 
-    FooCalc m_foo;
+//    FooCalc m_foo;
 };
 
 TEST_F(FooCalcTest, HandleNoneZeroInput)
